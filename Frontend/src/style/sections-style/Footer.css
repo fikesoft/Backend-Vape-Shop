@@ -1,0 +1,127 @@
+.footer {
+    position: relative; /* Relative positioning for the footer */
+    padding: 20px; /* Default padding */
+    text-align: center; /* Center text inside the footer */
+}
+
+.footer-title {
+    color: white;
+    font-size: 20px; /* Default font size */
+}
+
+.footer-overlay {
+    position: absolute; /* Overlay is positioned absolutely */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Full width of the footer */
+    height: 100%; /* Full height of the footer */
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black background */
+    display: flex; /* Flexbox to center text */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1; /* Make sure it's above the other content */
+}
+
+.footer-title, 
+.footer-list-payments {
+    z-index: 0; /* Push the footer content behind the overlay */
+    position: relative;
+}
+
+.footer-list-payments {
+    display: flex; /* Flex display for payment icons */
+    justify-content: center; /* Center the payment icons */
+    align-items: center; /* Align items vertically */
+    gap: 80px; /* Space between the icons */
+    list-style-type: none; /* Remove list styling */
+    padding: 0; /* Remove padding */
+}
+
+.list-item .icon {
+    width: 40px; /* Icon size */
+    height: 40px; /* Icon size */
+}
+
+.footer-list-payments li:nth-child(5) .icon,
+.footer-list-payments li:nth-child(6) .icon {
+    width: auto; /* Increase width */
+    height: 80px; /* Increase height */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px; /* Reduced padding */
+    }
+
+    .footer-title {
+        font-size: 18px; /* Slightly smaller font size */
+    }
+
+    .footer-list-payments {
+        gap: 40px; /* Reduced space between icons */
+    }
+
+    .list-item .icon {
+        width: 35px; /* Slightly smaller icon */
+        height: 35px; /* Slightly smaller icon */
+    }
+}
+
+@media (max-width: 425px) {
+    .footer {
+        padding: 10px; /* Further reduced padding */
+    }
+
+    .footer-title {
+        font-size: 16px; /* Further reduced font size */
+    }
+
+    .footer-list-payments {
+        flex-direction: column; /* Stack icons vertically */
+        gap: 20px; /* Space between icons */
+    }
+
+    .list-item .icon {
+        width: 30px; /* Further smaller icon */
+        height: 30px; /* Further smaller icon */
+    }
+}
+
+@media (max-width: 375px) {
+    .footer {
+        padding: 8px; /* Minimal padding for very small screens */
+    }
+
+    .footer-title {
+        font-size: 14px; /* Further reduced font size */
+    }
+
+    .footer-list-payments {
+        gap: 10px; /* Minimal space between icons */
+    }
+
+    .list-item .icon {
+        width: 25px; /* Smaller icon */
+        height: 25px; /* Smaller icon */
+    }
+}
+
+@media (max-width: 325px) {
+    .footer {
+        padding: 5px; /* Very minimal padding */
+    }
+
+    .footer-title {
+        font-size: 12px; /* Smallest font size */
+    }
+
+    .footer-list-payments {
+        gap: 5px; /* Minimal space between icons */
+    }
+
+    .list-item .icon {
+        width: 20px; /* Smallest icon */
+        height: 20px; /* Smallest icon */
+    }
+}

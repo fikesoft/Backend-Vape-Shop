@@ -1,0 +1,12 @@
+/* src/style/UnderageMessage.css */
+.underage-message {
+  color: white; /* Make the message visible */
+  text-align: center;
+  padding: 20px;
+  font-size: 64px; /* Increase font size if needed */
+  position: fixed; /* Position the message fixed to center it */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Centering magic */
+  z-index: 1000; /* Ensure it appears above other content */
+}

@@ -1,0 +1,72 @@
+.select-option {
+    padding: 5px 18px;
+    background-color: rgba(251, 37, 118, 0.6);
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .select-option:hover {
+    background-color: rgba(251, 37, 118, 0.3);
+    transform: scale(1.05); /* Slightly increase size */
+  }
+  
+  /* Airplane animation starting from the button's position */
+  .airplane-animation {
+    position: fixed;
+    z-index: 1000;
+    width: 100px; /* Default size for larger screens */
+    height: 100px;
+    background: none;
+    background-color: transparent; /* Ensure transparent background */
+    -webkit-background-color: transparent; /* Safari-specific */
+    left: 0;
+    top: 0;
+    animation: flyToCart 3.5s ease-in-out forwards;
+    pointer-events: none; /* Prevent interaction */
+  }
+  
+  /* Keyframes updated for movement from button to the right */
+  @keyframes flyToCart {
+    0% {
+      transform: translate(0, 0) scale(1) rotate(90deg); /* Start at the button's position */
+    }
+    100% {
+      transform: translate(calc(100vw - 100px), 0) scale(1.5) rotate(90deg); /* Move to the right, increase size, and rotate */
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .airplane-animation {
+      width: 50px; /* Reduce size on smaller screens */
+      height: 50px;
+    }
+  
+    @keyframes flyToCart {
+      0% {
+        transform: translate(0, 0) scale(0.8) rotate(90deg); /* Slightly smaller scale on mobile */
+      }
+      100% {
+        transform: translate(calc(100vw - 50px), 0) scale(1.2) rotate(90deg); /* Ensure it fits well on mobile */
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .airplane-animation {
+      width: 40px; /* Further reduce size for very small screens */
+      height: 40px;
+    }
+  
+    @keyframes flyToCart {
+      0% {
+        transform: translate(0, 0) scale(0.7) rotate(90deg);
+      }
+      100% {
+        transform: translate(calc(100vw - 40px), 0) scale(1) rotate(90deg); /* Adjust the size */
+      }
+    }
+  }
+  

@@ -1,0 +1,121 @@
+.catalog {
+    margin-top: 33px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adjusted gap between catalog sections */
+}
+
+/* Catalog title */
+.catalog-title {
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+/* Catalog item image */
+.catalog-item-img {
+    min-width: 211px;
+    height: auto;
+}
+
+/* Catalog list container */
+.catalog-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Items wrap to next line */
+    gap: 15px; /* Reduced gap between items */
+    max-width: 1000px; /* Limits the width for larger screens */
+}
+
+/* Individual catalog item */
+.catalog-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; /* Reduced gap between item title and image */
+    flex-basis: calc(33.33% - 10px); /* Three items per row with a smaller gap */
+    max-width: calc(33.33% - 10px); /* Ensure it doesn’t exceed 33.33% of the container */
+}
+
+/* Catalog item title */
+.catalog-item-title {
+    text-transform: uppercase;
+    font-size: 16px;
+    color: white;
+}
+
+/* Price styling */
+.price-item {
+    color: #ffffff;
+}
+
+/* ----- Responsive Media Queries ----- */
+
+/* For tablets and medium screens (1024px and 768px) */
+@media (max-width: 1024px) {
+    .catalog-title {
+        font-size: 32px; /* Reduce title size */
+    }
+    .catalog-list {
+        gap: 10px; /* Further reduce gap between items */
+        max-width: 800px; /* Adjust width */
+    }
+    .catalog-item-img {
+        min-width: 180px; /* Smaller image size */
+    }
+}
+
+/* For mobile screens (425px and below) */
+@media (max-width: 768px) {
+    .catalog-title {
+        font-size: 28px; /* Further reduce title size */
+        text-align: center; /* Center align the title */
+    }
+    .catalog-list {
+        gap: 10px; /* Smaller gaps between items */
+        max-width: 100%; /* Full width */
+    }
+    .catalog-item {
+        flex-basis: calc(30% - 10px); /* Adjust to fit more items */
+        max-width: calc(30% - 10px); /* Ensure it doesn’t exceed 40% of the container */
+    }
+    .catalog-item-img {
+        min-width: 150px; /* Smaller image size */
+    }
+    .catalog-item-title {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+}
+
+@media (max-width: 425px) {
+    .catalog-title {
+        font-size: 24px; /* Even smaller for very small screens */
+    }
+    .catalog-list {
+        flex-direction: column; /* Stack catalog items vertically */
+        gap: 10px; /* Smaller gap */
+        align-items: center; /* Center the items */
+    }
+    .catalog-item {
+        flex-basis: 100%; /* Make each item take full width */
+        max-width: 100%; /* Ensure it doesn’t exceed 100% of the container */
+    }
+    .catalog-item-img {
+        min-width: 130px; /* Smallest image size */
+    }
+    .catalog-item-title {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 375px) {
+    .catalog-title {
+        font-size: 22px;
+    }
+    .catalog-item-img {
+        min-width: 120px; /* Minimum size for smallest screens */
+    }
+}
